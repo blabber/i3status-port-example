@@ -13,5 +13,11 @@ MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Generates a status bar for dzen2, xmobar or similar programs
 
 USE_BZIP2=	YES
+USE_GMAKE=	YES
+
+LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
